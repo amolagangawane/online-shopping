@@ -13,5 +13,10 @@ pipeline{
                     git url: 'https://github.com/amolagangawane/online-shopping.git', branch: 'master'
                 }
             }
+    stage('Build') {
+                steps {
+                    sh './mvnw clean package -DskipTests'
+                }
+            }
   }
 }

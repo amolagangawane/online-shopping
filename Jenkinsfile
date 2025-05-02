@@ -1,11 +1,17 @@
 pipeline{
   agent any 
 
+//    environment {
+//           IMAGE_NAME = 'online-shopping-app'
+//           DOCKER_REGISTRY = 'amolgangawane1992' // or private registry
+//       }
+
   stages {
-    stage("build") {
-        steps {
-            sh "mvn clean install"
-        }
-    }
+    stage('Checkout') {
+                steps {
+                echo 'checkout from git'
+                    git url: 'https://github.com/amolagangawane/online-shopping.git', branch: 'master'
+                }
+            }
   }
 }

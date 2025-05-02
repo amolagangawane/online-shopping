@@ -2,4 +2,4 @@ server:
   port: 9000
 spring:
   application:
-    name: online-shopping
+    name: online-shopping-app

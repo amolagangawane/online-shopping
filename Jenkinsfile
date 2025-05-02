@@ -1,6 +1,9 @@
 pipeline{
   agent any 
 
+    tools {
+        jdk 'jdk-21'
+    }
    environment {
           IMAGE_NAME = 'online-shopping-app'
           DOCKER_REGISTRY = 'amolgangawane1992' // or private registry

@@ -1,10 +1,10 @@
 pipeline{
   agent any 
 
-//    environment {
-//           IMAGE_NAME = 'online-shopping-app'
-//           DOCKER_REGISTRY = 'amolgangawane1992' // or private registry
-//       }
+   environment {
+          IMAGE_NAME = 'online-shopping-app'
+          DOCKER_REGISTRY = 'amolgangawane1992' // or private registry
+      }
 
   stages {
     stage('Checkout') {
@@ -15,6 +15,7 @@ pipeline{
             }
     stage('Build') {
                 steps {
+                    sh 'chmod +x ./mvnw'
                     sh './mvnw clean package -DskipTests'
                 }
             }
